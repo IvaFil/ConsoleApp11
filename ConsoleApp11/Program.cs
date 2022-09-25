@@ -10,6 +10,16 @@ namespace ConsoleApp11
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Задай первое число: ");
+            int first = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Задай второе число: ");
+            int second = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = first; i <= second; i++)
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }
