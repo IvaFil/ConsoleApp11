@@ -10,20 +10,24 @@ namespace ConsoleApp11
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Задай первое число: ");
-            int first = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите начальное число M:");
+            int numberM = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Задай второе число: ");
-            int second = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите начальное число N:");
+            int numberN = int.Parse(Console.ReadLine());
+
+            
 
 
-            int sum = 0;
-            for (int i = first; i <= second; i++)
+            int AckermannFunction(int numberM, int numberN)
             {
-                sum += i;
-                
+                if (numberM == 0) return numberN + 1;
+                if (numberM != 0 && numberN == 0) return AckermannFunction(numberM - 1, 1);
+                if (numberM > 0 && numberN > 0) return AckermannFunction(numberM - 1, AckermannFunction(numberM, numberN - 1));
+                return AckermannFunction(numberM, numberN);
             }
-            Console.WriteLine(sum);
+
+            Console.WriteLine($"Функция Аккермана для чисел A({numberM},{numberN}) = {AckermannFunction(numberM, numberN)}");
         }
     }
 }
