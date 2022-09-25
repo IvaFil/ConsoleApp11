@@ -16,10 +16,14 @@ namespace ConsoleApp11
             Console.WriteLine("Задай второе число: ");
             int second = Convert.ToInt32(Console.ReadLine());
 
+
+            int sum = 0;
             for (int i = first; i <= second; i++)
             {
-                Console.WriteLine(i);
+                sum += i;
+                
             }
+            Console.WriteLine(sum);
         }
     }
 }
